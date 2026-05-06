@@ -1,0 +1,73 @@
+{
+  "repo": "ledger-rel-runbook-loom",
+  "language": "Solidity",
+  "category": "Reliability",
+  "goal": "Develop a Solidity command-oriented project for runbook scenarios with append-only fixtures, checkpoint recovery checks, and synthetic fixtures only.",
+  "review_model": {
+    "terms": [
+      "budget pressure",
+      "failure width",
+      "recovery gap",
+      "runbook drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "budget pressure",
+      "signal": 57,
+      "slack": 27,
+      "drag": 10,
+      "confidence": 77,
+      "score": 188,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "failure width",
+      "signal": 55,
+      "slack": 31,
+      "drag": 23,
+      "confidence": 90,
+      "score": 162,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "recovery gap",
+      "signal": 83,
+      "slack": 20,
+      "drag": 19,
+      "confidence": 56,
+      "score": 185,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "runbook drift",
+      "signal": 84,
+      "slack": 41,
+      "drag": 9,
+      "confidence": 60,
+      "score": 242,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "budget pressure",
+      "signal": 56,
+      "slack": 45,
+      "drag": 18,
+      "confidence": 48,
+      "score": 151,
+      "lane": "ship"
+    }
+  ]
+}
